@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Sign from './pages/sign/sign.component';
@@ -45,14 +45,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
-          <Header currentUser={this.state.currentUser} />
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/shop" component={ShopPage} />
-            <Route exact path="/signin" component={Sign} />
-          </Switch>
-        </BrowserRouter>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/shop" component={ShopPage} />
+          <Route exact path="/signin" component={Sign} />
+        </Switch>
       </div>
     );
   }
